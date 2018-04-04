@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Apr  4 16:10:09 2018
+author on Wed Apr  4 16:10:09 2018
 @author: Jose
 A Neural Network, used Keras (TensorFlow backend) to classify the ET data
 """
