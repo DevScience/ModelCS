@@ -1,5 +1,6 @@
 # K-Means Clustering
-
+# Created on Wed Apr  4 09:39:40 2018
+# @author: Jose
 # Importing the libraries
 import numpy as np
 import matplotlib.pyplot as plt

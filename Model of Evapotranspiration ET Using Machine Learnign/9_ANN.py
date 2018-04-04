@@ -1,5 +1,6 @@
 # Artificial Neural Network
-
+# Created on Wed Apr  4 09:39:40 2018
+# @author: Jose
 # Installing Theano
 # pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
 
