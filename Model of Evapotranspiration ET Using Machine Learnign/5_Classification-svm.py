@@ -7,15 +7,15 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
-dataset = pd.read_csv("ETo.csv")
-X = dataset.iloc[:,1:8].values
-y = dataset.iloc[:,9].values
-#y = y.astype(np.int32)
+dataset = pd.read_csv("ETo5.csv")
+X = dataset[['Radiacion','Humedad','Temperatura','Presion','Precipitacion','Viento','Mes']].copy()
+y_ = dataset.iloc[:,8].values
+y = y_.astype(np.int64)
 
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.cross_validation import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
 
 #==============================================================================
 # # Feature Scaling
@@ -37,7 +37,7 @@ y_pred = classifier.predict(X_test)
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
-plt.imshow(cm, cmap='binary', interpolation='None')
+#plt.imshow(cm, cmap='binary', interpolation='None')
 
 #Accuracy score
 from sklearn.metrics import accuracy_score

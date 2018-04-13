@@ -18,10 +18,10 @@ from keras.layers import Dense
 from keras.optimizers import Adam
 
 # Importing the dataset
-dataset = pd.read_csv("ETo.csv")
+dataset = pd.read_csv("ETo4.csv")
 X = dataset.iloc[:,1:8].values
-y_ = dataset.iloc[:,9].values
-y_ = y_.astype(np.int32)
+y_ = dataset.iloc[:,8].values
+#y_ = y_.astype(np.int32)
 y_ = y_.reshape(-1, 1) # Convert data to a single column
 
 # One Hot encode the class labels
@@ -45,7 +45,7 @@ model = Sequential()
 
 model.add(Dense(10, input_shape=(7,), activation='relu', name='fc1'))
 model.add(Dense(10, activation='relu', name='fc2'))
-model.add(Dense(4, activation='softmax', name='output'))
+model.add(Dense(9, activation='softmax', name='output'))
 
 # Adam optimizer with learning rate of 0.001
 optimizer = Adam(lr=0.001)
@@ -55,7 +55,7 @@ print('Neural Network Model Summary: ')
 print(model.summary())
 
 # Train the model
-model.fit(train_x, train_y, verbose=2, batch_size=5, epochs=200)
+model.fit(train_x, train_y, verbose=2, batch_size=5, epochs=100)
 
 # Test on unseen data
 

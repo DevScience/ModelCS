@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
-dataset = pd.read_csv("ETo.csv")
+dataset = pd.read_csv("ETo4.csv")
 X = dataset.iloc[:,1:8].values
-y = dataset.iloc[:,9].values
+y = dataset.iloc[:,8].values
 #y = y.astype(np.int32)
 
 # Splitting the dataset into the Training set and Test set

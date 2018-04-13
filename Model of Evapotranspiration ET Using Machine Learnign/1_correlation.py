@@ -14,19 +14,18 @@ import pandas as pd
 
 # Load the data from the ET
 import pandas as pd
-et_data = pd.read_csv("ETo.csv")
+et_data = pd.read_csv("EToCor.csv")
 
-X = et_data.iloc[:,1:8].values
-y = et_data.iloc[:,9].values
+#X = et_data.iloc[:,1:8].values
+#y = et_data.iloc[:,8].values
 
 # Compute the correlation
 import pandas as pd
 correlation = et_data.corr(method='pearson')
 
-import numpy as np; np.random.seed(0)
+import numpy as np; np.random.seed(42)
 import seaborn as sns; sns.set()
 ax = sns.heatmap(correlation)
-
 # Compute variance
 variance = np.var(et_data)
 
